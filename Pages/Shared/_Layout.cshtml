@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - aspnetWebApp</title>
+    <script type="importmap"></script>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/aspnetWebApp.styles.css" asp-append-version="true" /> *@
+    <link rel="stylesheet" href="~/css/site.css"> 
+</head>
+
+<body>
+    @* <nav class="nav">
+        <ul class="nav-ul">
+            <li class="nav-item">
+                <a class="nav-link" asp-page="/Index">
+                    Главная
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-page="/Resumes">
+                    Резюме
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-page="/CreateResumes">
+                    Создать резюме
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-page="/About">
+                    О проекте
+                </a>
+            </li>
+        </ul>
+    </nav> *@
+
+    <header class="site-header">
+        <div class="header-container">
+            <a class="site-logo" asp-page="/Index">
+                Collage <span>Job</span>
+            </a>
+            <nav class="site-nav">
+                <a asp-page="/Index">Главная</a>
+                <a asp-page="/Resumes">Каталог резюме</a>
+                <a asp-page="/CreateResume">Создать резюме</a>
+                <a asp-page="/About">О проекте</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <a class="footer-logo" asp-page="/Index">
+                Collage <span>Job</span>
+                <p>Платформа для старта карьеры</p>
+                <span class="footer-copy">
+                    @DateTime.Now.Year CollageJob
+                </span>
+            </a>
+        </div>
+    </footer>
+
+    @* <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> *@
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
